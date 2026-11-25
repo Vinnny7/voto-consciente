@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Pratique a votação eletrônica em um simulador educativo com candidatos fictícios.">
+  <title>Voto Consciente | Simulador de votação</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="urna.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#simulador">Ir para a urna</a>
+  <header class="site-header">
+    <div class="shell topbar">
+      <a class="brand" href="#inicio"><span class="brand-icon" aria-hidden="true"><i></i></span><span>Voto Consciente</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#simulador">Simulador</a>
+        <a href="#guia">Como votar</a>
+        <a href="#checagem">Antes de compartilhar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="tag"><span></span> SIMULAÇÃO EDUCATIVA</p>
+        <h1 id="page-title">Seu voto em prática<span>.</span></h1>
+        <p class="intro-text">Experimente votar para deputado federal e presidente. Os candidatos são fictícios e a atividade não coleta dados pessoais.</p>
+      </div>
+      <ol class="steps" aria-label="Etapas da simulação">
+        <li id="step-deputado" aria-current="step"><span>1</span> Deputado federal</li>
+        <li id="step-presidente"><span>2</span> Presidente</li>
+      </ol>
+    </section>
+
+    <section id="simulador" class="workbench" tabindex="-1" aria-label="Simulador de votação">
+      <div class="machine">
+        <div class="machine-top"><span>URNA ELETRÔNICA</span><span class="device-status"><i></i> <span id="device-label">Em votação</span></span></div>
+        <div class="machine-body">
+          <section class="screen" id="screen" aria-label="Tela da urna">
+            <div id="ballot">
+              <p class="screen-label">SEU VOTO PARA</p>
+              <h2 id="office-title" tabindex="-1">Deputado federal</h2>
+              <div class="digit-boxes" id="digits" aria-hidden="true"></div>
+              <div id="candidate-preview" class="candidate-preview" aria-live="polite" aria-atomic="true"></div>
+              <p id="screen-hint" class="screen-hint"></p>
+            </div>
+            <div id="finish" class="finish" hidden>
+              <span class="finish-icon" aria-hidden="true">✓</span>
+              <h2 id="finish-title" tabindex="-1">FIM</h2>
+              <p>Você concluiu a votação simulada para os dois cargos.</p>
+              <p class="session-note">As escolhas ficam na memória desta página.</p>
+              <button type="button" class="restart" id="restart">Nova votação</button>
+            </div>
+          </section>
+
+          <section class="controls" aria-label="Teclado da urna">
+            <div class="keypad" id="keypad">
+              <button type="button" data-key="1">1</button><button type="button" data-key="2">2</button><button type="button" data-key="3">3</button>
+              <button type="button" data-key="4">4</button><button type="button" data-key="5">5</button><button type="button" data-key="6">6</button>
+              <button type="button" data-key="7">7</button><button type="button" data-key="8">8</button><button type="button" data-key="9">9</button>
+              <button type="button" data-key="0">0</button>
+            </div>
+            <div class="action-row">
+              <button type="button" class="white-key" id="white-key">Branco</button>
+              <button type="button" class="correct-key" id="correct-key" disabled>Corrige</button>
+              <button type="button" class="confirm-key" id="confirm-key" disabled>Confirma</button>
+            </div>
+            <p class="key-hint">No computador, use os números, Backspace e Enter.</p>
+          </section>
+        </div>
+      </div>
+
+      <aside class="candidates" aria-labelledby="candidate-heading">
+        <div class="aside-heading">
+          <span class="aside-icon" aria-hidden="true">≡</span>
+          <div><h2 id="candidate-heading">Candidatos fictícios</h2><p id="candidate-office">Deputado federal</p></div>
+        </div>
+        <ul id="candidate-list"></ul>
+        <p id="candidate-note" class="aside-note">Escolha um número da lista e digite no teclado da urna.</p>
+      </aside>
+    </section>
+
+    <section id="guia" class="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Como votar</h2>
+      <div class="guide-grid">
+        <article><span class="guide-icon green" aria-hidden="true">✓</span><h3>Voto em candidato</h3><p>Digite todos os dígitos, confira o nome na tela e aperte <strong>Confirma</strong>. Para apagar a escolha antes de confirmar, aperte <strong>Corrige</strong>.</p></article>
+        <article><span class="guide-icon gray" aria-hidden="true">○</span><h3>Voto em branco</h3><p>Aperte <strong>Branco</strong> e depois <strong>Confirma</strong>. Você pode testar essa opção em qualquer um dos cargos.</p></article>
+        <article><span class="guide-icon amber" aria-hidden="true">×</span><h3>Voto nulo</h3><p>Digite um número completo que não aparece na lista, como <strong>0000</strong> para deputado, e aperte <strong>Confirma</strong>.</p></article>
+      </div>
+      <a class="source-link" href="https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/faltam-17-dias-votos-nulos-e-brancos-nao-anulam-a-eleicao">Como o TSE explica os votos em branco e nulo</a>
+    </section>
+
+    <section id="checagem" class="literacy" aria-labelledby="literacy-title">
+      <div>
+        <p class="tag"><span></span> EDUCAÇÃO MIDIÁTICA</p>
+        <h2 id="literacy-title">Antes de compartilhar</h2>
+        <p>Recebeu uma notícia sobre as eleições? Confira quem publicou, a data e o contexto. Procure a mesma informação em outras fontes confiáveis. Se for um vídeo ou áudio possivelmente gerado por IA, procure a gravação original e veja se há uma checagem publicada.</p>
+        <a class="source-link" href="https://www.justicaeleitoral.jus.br/fato-ou-boato/">Confira as checagens da Justiça Eleitoral</a>
+      </div>
+      <div class="scenario">
+        <p class="scenario-label">TESTE RÁPIDO</p>
+        <h3>Chegou um vídeo sem fonte dizendo que o local de votação mudou. O que você faz?</h3>
+        <div class="answers" id="answers">
+          <button type="button" data-answer="forward">Repasso logo para avisar a turma.</button>
+          <button type="button" data-answer="check">Confiro em um canal oficial antes de compartilhar.</button>
+        </div>
+        <p class="answer-feedback" id="answer-feedback" role="status" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <div><strong>Voto Consciente</strong><span>Unijorge · Ciência da Computação</span></div>
+    <span>Simulador acadêmico independente</span>
+  </footer>
+</body>
+</html>
