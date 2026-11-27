@@ -1,8 +1,6 @@
 # Voto Consciente
 
-Simulador educativo de urna eletrônica da disciplina de Programação Orientada
-a Objetos do curso de Ciência da Computação da Unijorge. A aplicação foi
-atualizada conforme o roteiro do [Tutorial Firebase do professor Nirton Afonso](https://nirtonafonso.github.io/Tutorial-Firebase/#/10-Roteiro-do-Trabalho-AV3-e-Extensao).
+O Voto Consciente é o simulador de urna eletrônica que fizemos para o trabalho de Programação Orientada a Objetos, do curso de Ciência da Computação da Unijorge. Durante o desenvolvimento, usamos como apoio o [tutorial do professor Nirton Afonso](https://nirtonafonso.github.io/Tutorial-Firebase/).
 
 A urna usa Java Swing e Cloud Firestore. Cada participante vota para deputado
 federal e depois para presidente, com candidatos e partidos fictícios. As quatro
