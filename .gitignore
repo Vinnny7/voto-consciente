@@ -1,0 +1,7 @@
+.env
+classes/
+target/
+VotoConsciente.jar
+application_default_credentials.json
+*service-account*.json
+*.log
